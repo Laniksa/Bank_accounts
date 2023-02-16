@@ -27,7 +27,17 @@ public abstract class Score {
         }
         System.out.println( score1.name + " " + score1.amount + " pуб.");
         System.out.println( score2.name + " " + score2.amount + " pуб.");
+    }
 
+    public void addMoney (Score score, int amount){
+        System.out.println("Для пополнения " + score + " введите сумму");
+        score.amount = score.amount + amount;
+        System.out.println( score.name + " " + score.amount + " pуб.");
 
+    }
+    public void pay (Score score, int amount){
+        System.out.println("Оплаты " + score + " введите сумму");
+        score.amount = score.amount - amount;
+        System.out.println( score.name + " " + score.amount + " pуб.");
     }
 }
