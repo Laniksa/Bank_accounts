@@ -31,13 +31,4 @@ public class SavingsAccount extends Score{
 
     }
 
-    @Override
-    public int getAmount() {
-        return 0;
-    }
-
-    @Override
-    public void setAmount(int amount) {
-
-    }
 }

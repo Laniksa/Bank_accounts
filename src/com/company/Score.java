@@ -9,9 +9,6 @@ public abstract class Score {
 
    }
 
-//    protected Score() {
-//    }
-
     public abstract void translation(Score score, int sum);
 
 
@@ -32,6 +29,6 @@ public abstract class Score {
 
     public void setAmount(int amount){
         this.amount = amount;
-    };
+    }
 }
 

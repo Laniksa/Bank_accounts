@@ -19,20 +19,20 @@ public class CheckingAccount extends Score{
             }
 
         System.out.println( name + " " + super.getAmount() + " pуб.");
-        System.out.println( score.getName()+ " " + score.getAmount() + " pуб.");
+        System.out.println( score.getName()+ " " + score.getAmount() + " pуб.\n");
     }
 
     @Override
     public void addMoney(int amount) {
         System.out.println("Пополнение " + name + " на сумму " + amount + " руб.");
         super.setAmount(super.getAmount() + amount);
-        System.out.println("На " + name + " " + super.getAmount() + " руб.");
+        System.out.println("На " + name + " " + super.getAmount() + " руб.\n");
 
     }
 
     @Override
     public void pay(int amount) {
-        System.out.println("Оплата с " + name + " введите сумму");
+        System.out.println("Оплата с " + name);
             if(super.getAmount() < amount){
                 System.out.println("На счете не хватает средств, попробуйте ввести другую сумму для оплаты");
             }else{
@@ -40,7 +40,7 @@ public class CheckingAccount extends Score{
         }
 
 
-        System.out.println( name + " " + super.getAmount() + " pуб.");
+        System.out.println( name + " " + super.getAmount() + " pуб.\n");
     }
 
     @Override
@@ -52,6 +52,7 @@ public class CheckingAccount extends Score{
     public void setName(String name) {
         this.name = name;
     }
+
 
 }
 
