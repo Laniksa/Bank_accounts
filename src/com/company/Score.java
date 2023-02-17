@@ -18,7 +18,7 @@ public abstract class Score {
 
     public abstract void addMoney(int amount);
 
-    public abstract void pay (Score score, int amount);
+    public abstract void pay (int amount);
 
 
 

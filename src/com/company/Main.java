@@ -12,8 +12,9 @@ public static Scanner scanner = new Scanner(System.in);
     SavingsAccount savingsAccount = new SavingsAccount("Сберегательный счет", 3000);
 
 
-        checkingAccount1.addMoney(100);
-        checkingAccount1.translation(checkingAccount2,90);
+        checkingAccount1.addMoney(90);
+        checkingAccount1.translation(checkingAccount2,80);
+        checkingAccount1.pay(10);
 
 
 

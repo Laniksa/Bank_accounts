@@ -1,9 +1,7 @@
 package com.company;
 
 public class CheckingAccount extends Score{
-    public CheckingAccount ch ;
-    String name = "Расчетный счет ";
-    int amount = 0;
+    String name;
     public CheckingAccount(String name, int amount) {
         super(amount);
         this.name = name;
@@ -12,15 +10,14 @@ public class CheckingAccount extends Score{
     @Override
     public void translation(Score score, int sum) {
         System.out.println("Перевод с " + name + " на " + score.getName() + " суммы в размере " + sum + "руб.");
-        while(true){
+
             if(sum > super.getAmount()){
-                System.out.println("На счете " + name + " нет суммы введенной вами, попробуйте еще раз");
+                System.out.println("На счете " + name + " нет суммы введенной вами");
             }else{
                 score.setAmount(score.getAmount() + sum);
                 super.setAmount(super.getAmount() - sum);
-                break;
             }
-        }
+
         System.out.println( name + " " + super.getAmount() + " pуб.");
         System.out.println( score.getName()+ " " + score.getAmount() + " pуб.");
     }
@@ -34,10 +31,16 @@ public class CheckingAccount extends Score{
     }
 
     @Override
-    public void pay(Score score, int amount) {
-        System.out.println("Оплаты " + score + " введите сумму");
-        score.setAmount(score.getAmount() - amount);
-        System.out.println( score.getName() + " " + score.getAmount() + " pуб.");
+    public void pay(int amount) {
+        System.out.println("Оплата с " + name + " введите сумму");
+            if(super.getAmount() < amount){
+                System.out.println("На счете не хватает средств, попробуйте ввести другую сумму для оплаты");
+            }else{
+                super.setAmount(super.getAmount() - amount);
+        }
+
+
+        System.out.println( name + " " + super.getAmount() + " pуб.");
     }
 
     @Override
@@ -50,14 +53,5 @@ public class CheckingAccount extends Score{
         this.name = name;
     }
 
-    @Override
-    public int getAmount() {
-        return amount;
-    }
-
-    @Override
-    public void setAmount(int amount) {
-        this.amount = amount;
-    }
 }
 

@@ -16,7 +16,7 @@ public class CreditAccount extends Score{
     }
 
     @Override
-    public void pay(Score score, int amount) {
+    public void pay(int amount) {
 
     }
 
