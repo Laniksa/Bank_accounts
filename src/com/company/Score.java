@@ -12,7 +12,7 @@ public abstract class Score {
 //    protected Score() {
 //    }
 
-    public abstract void translation(Score score1, Score score2, int sum);
+    public abstract void translation(Score score, int sum);
 
 
 

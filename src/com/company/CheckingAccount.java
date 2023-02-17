@@ -10,19 +10,19 @@ public class CheckingAccount extends Score{
     }
 
     @Override
-    public void translation(Score score1, Score score2, int sum) {
-        System.out.println("Перевод с " + score1.getName() + " на " + score2.getName() + " суммы в размере " + sum + "руб.");
+    public void translation(Score score, int sum) {
+        System.out.println("Перевод с " + name + " на " + score.getName() + " суммы в размере " + sum + "руб.");
         while(true){
-            if(sum > score1.getAmount()){
-                System.out.println("На счете " + score1.getName() + " нет суммы введенной вами, попробуйте еще раз");
+            if(sum > super.getAmount()){
+                System.out.println("На счете " + name + " нет суммы введенной вами, попробуйте еще раз");
             }else{
-                score2.setAmount(score2.getAmount() + sum);
-                score1.setAmount(score1.getAmount() - sum);
+                score.setAmount(score.getAmount() + sum);
+                super.setAmount(super.getAmount() - sum);
                 break;
             }
         }
-        System.out.println( score1.getName() + " " + score1.getAmount() + " pуб.");
-        System.out.println( score2.getName()+ " " + score2.getAmount() + " pуб.");
+        System.out.println( name + " " + super.getAmount() + " pуб.");
+        System.out.println( score.getName()+ " " + score.getAmount() + " pуб.");
     }
 
     @Override

@@ -7,7 +7,7 @@ public class SavingsAccount extends Score{
     }
 
     @Override
-    public void translation(Score score1, Score score2, int sum) {
+    public void translation(Score score, int sum) {
 
     }
 
