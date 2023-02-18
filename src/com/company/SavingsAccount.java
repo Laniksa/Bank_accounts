@@ -12,7 +12,7 @@ public class SavingsAccount extends Score{
 
     @Override
     public void translation(Score score, int sum) {
-        int remains = 0;
+        int remains;
 
         System.out.println("Перевод с " + name + " на " + score.getName() + " суммы в размере " + sum + "руб.");
         if(sum > amount){

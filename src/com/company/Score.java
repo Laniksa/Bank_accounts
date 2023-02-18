@@ -4,14 +4,7 @@ public abstract class Score {
    private String name;
    private int amount = 0;
 
-//   public Score(int amount){
-//       this.amount = amount;
-//
-//   }
-
     public abstract void translation(Score score, int sum);
-
-
 
     public abstract void addMoney(int amount);
 
@@ -20,8 +13,6 @@ public abstract class Score {
 
 
     public abstract String getName();
-
-    public abstract void setName(String name);
 
     public int getAmount(){
         return amount;
