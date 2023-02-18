@@ -13,7 +13,7 @@ public class CheckingAccount extends Score{
         System.out.println("Перевод с " + name + " на " + score.getName() + " суммы в размере " + sum + "руб.");
 
             if(sum > amount){
-                System.out.println("На счете " + name + " нет суммы введенной вами");
+                System.out.println("На счете " + name + " нет такой суммы");
             }else{
                 score.setAmount(score.getAmount() + sum);
                 amount = amount - sum;
