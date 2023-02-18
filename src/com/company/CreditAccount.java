@@ -1,7 +1,7 @@
 package com.company;
 
 public class CreditAccount extends Score{
-    String name;
+    private String name;
     private int amount;
 
     public CreditAccount(String name, int amount) {
