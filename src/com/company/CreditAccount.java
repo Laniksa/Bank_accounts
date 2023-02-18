@@ -17,7 +17,7 @@ public class CreditAccount extends Score{
 
     @Override
     public void translation(Score score, int sum) {
-        System.out.println("Перевод с " + name + " невозможен!");
+        System.out.println("Перевод с " + name + " невозможен!\n");
     }
 
     @Override
@@ -34,8 +34,10 @@ public class CreditAccount extends Score{
     }
 
     @Override
-    public void pay(int amount) {
-
+    public void pay(int payAmount) {
+        System.out.println("Оплата с " + name);
+            amount = amount - payAmount;
+        System.out.println( name + " " + amount + " pуб.\n");
     }
 
     @Override

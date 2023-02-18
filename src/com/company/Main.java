@@ -10,7 +10,7 @@ public static Scanner scanner = new Scanner(System.in);
         CheckingAccount checkingAccount2 = new CheckingAccount("Расчетный счет2 ", 0);
         CreditAccount creditAccount1 = new CreditAccount("Кредитный счет 1", -40);
 
-        //CreditAccount creditAccount2 = new CreditAccount("Кредитный счет 2", 1);
+        CreditAccount creditAccount2 = new CreditAccount("Кредитный счет 2", 0);
         SavingsAccount savingsAccount = new SavingsAccount("Сберегательный счет", 3000);
 
 
@@ -19,7 +19,8 @@ public static Scanner scanner = new Scanner(System.in);
         checkingAccount1.pay(10);
 
         creditAccount1.addMoney(50);
-        //creditAccount2.addMoney(4);
+        creditAccount2.translation(checkingAccount1, 20);
+        creditAccount2.pay(4000);
 
 
 
