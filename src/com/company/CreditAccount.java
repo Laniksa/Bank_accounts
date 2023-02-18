@@ -51,11 +51,6 @@ public class CreditAccount extends Score{
     }
 
     @Override
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    @Override
     public int getAmount() {
         return amount;
     }

@@ -58,11 +58,6 @@ public class SavingsAccount extends Score{
     }
 
     @Override
-    public void setName(String name) {
-
-    }
-
-    @Override
     public int getAmount() {
         return amount;
     }
