@@ -4,10 +4,10 @@ public abstract class Score {
    private String name;
    private int amount = 0;
 
-   public Score(int amount){
-       this.amount = amount;
-
-   }
+//   public Score(int amount){
+//       this.amount = amount;
+//
+//   }
 
     public abstract void translation(Score score, int sum);
 

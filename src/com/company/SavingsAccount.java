@@ -1,9 +1,11 @@
 package com.company;
 
 public class SavingsAccount extends Score{
-
+    String name;
+    int amount;
     public SavingsAccount(String name, int amount) {
-        super(amount);
+        this.amount = amount;
+        this.name = name;
     }
 
     @Override

@@ -2,12 +2,18 @@ package com.company;
 
 public class CreditAccount extends Score{
     String name;
-    int amount;
+    private int amount;
 
     public CreditAccount(String name, int amount) {
-        super(amount);
         this.name = name;
+        //balance(amount);
+        if(amount > 0)
+            throw new IllegalArgumentException("Сумма на счете " + name + " не может быть больше 0\n");// единственный вариант который не дает создать экземпляр класса если счет больше 0
+        this.amount = amount;
+
+
     }
+
 
     @Override
     public void translation(Score score, int sum) {
@@ -15,15 +21,16 @@ public class CreditAccount extends Score{
     }
 
     @Override
-    public void addMoney(int amount) {
+    public void addMoney(int money) {
+        //balance(amount);
         int remains = 0;
-        System.out.println("Пополнение " + name + " на сумму " + amount + " руб.");
-        super.setAmount(super.getAmount() + amount);
-        if (super.getAmount() > 0){
-            remains = super.getAmount();
-            super.setAmount(0);
+        System.out.println("Пополнение " + name + " на сумму " + money + " руб.");
+        setAmount(getAmount() + money);
+        if (getAmount() > 0){
+            remains = getAmount();
+            setAmount(0);
         }
-        System.out.println("При пополнении " + name + " на " + amount + " руб. Баланс равен " + super.getAmount() + " руб. Остаток: " + remains + "\n"  );
+        System.out.println("При пополнении " + name + " на " + money + " руб. Баланс равен " + getAmount() + " руб. Остаток: " + remains + "\n"  );
     }
 
     @Override
@@ -39,33 +46,29 @@ public class CreditAccount extends Score{
     @Override
     public void setName(String name) {
         this.name = name;
-
-    }
-    public void setAmount(int amount){
-        if(balance(amount)==true){
-            this.amount = amount;
-        }else{
-            System.out.println("Сумма на счете " + name + " не может быть больше 0");
-        }
     }
 
     @Override
     public int getAmount() {
-        if(balance(amount)==true){
-            return amount;
-        }else{
-            System.out.println("Сумма на счете " + name + " не может быть больше 0");
-        }
-        return 0;
+        return amount;
     }
 
-    public boolean balance(int amount){
-        if(super.getAmount() > 0){
-            //System.out.println("Сумма на счете " + name + " не может быть больше 0");
-            return false;
-        }else{
-            return true;
-        }
+    @Override
+    public void setAmount(int amount) {
+        this.amount = amount;
     }
+
+//    public boolean balance(int amount){
+//        try {
+//            if (amount <= 0) {
+//                this.amount = amount;
+//
+//            }
+//        } catch (Exception E) {
+//            System.out.println("Сумма на счете " + name + " не может быть больше 0\n");
+//            return false;
+//        }
+//        return true;
+//    }
 
 }

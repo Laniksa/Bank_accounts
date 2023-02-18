@@ -2,8 +2,9 @@ package com.company;
 
 public class CheckingAccount extends Score{
     String name;
+    int amount;
     public CheckingAccount(String name, int amount) {
-        super(amount);
+        this.amount = amount;
         this.name = name;
     }
 
