@@ -10,10 +10,24 @@ public class CheckingAccount extends Score{
 
     @Override
     public void translation(Score score, int sum) {
+        int remains = 0;
         System.out.println("Перевод с " + name + " на " + score.getName() + " суммы в размере " + sum + "руб.");
 
             if(sum > amount){
                 System.out.println("На счете " + name + " нет такой суммы");
+            }else if(score instanceof CreditAccount){
+                if(score.getAmount() == 0){
+                    System.out.println("Сумма на " + score.getName() + " максимальна, перевод невозможен!");
+                }else {
+                    score.setAmount(score.getAmount() + sum);
+                    if(score.getAmount() > 0){
+                        remains = score.getAmount();
+                        amount = amount - (sum - remains);
+                        score.setAmount(0);
+                    }else{
+                        amount = amount - sum;
+                    }
+                }
             }else{
                 score.setAmount(score.getAmount() + sum);
                 amount = amount - sum;

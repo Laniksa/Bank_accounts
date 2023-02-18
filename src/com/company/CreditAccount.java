@@ -6,9 +6,8 @@ public class CreditAccount extends Score{
 
     public CreditAccount(String name, int amount) {
         this.name = name;
-        //balance(amount);
-        if(amount > 0)
-            throw new IllegalArgumentException("Сумма на счете " + name + " не может быть больше 0\n");// единственный вариант который не дает создать экземпляр класса если счет больше 0
+//        if(amount > 0)
+//            throw new IllegalArgumentException("Сумма на счете " + name + "- не может быть больше 0\n");
         this.amount = amount;
 
 
@@ -17,12 +16,16 @@ public class CreditAccount extends Score{
 
     @Override
     public void translation(Score score, int sum) {
-        System.out.println("Перевод с " + name + " невозможен!\n");
+        System.out.println("Перевод с " + name + "- невозможен!\n");
     }
 
     @Override
     public void addMoney(int money) {
         //balance(amount);
+        if(amount  > 0){
+            System.out.println("Сумма на счете " + name + "- не может быть больше 0\n");
+            return;
+        }
         int remains = 0;
         System.out.println("Пополнение " + name + " на сумму " + money + " руб.");
         setAmount(getAmount() + money);
@@ -35,6 +38,10 @@ public class CreditAccount extends Score{
 
     @Override
     public void pay(int payAmount) {
+        if(amount > 0){
+            System.out.println("Сумма на счете " + name + "- не может быть больше 0\n");
+            return;
+        }
         System.out.println("Оплата с " + name);
             amount = amount - payAmount;
         System.out.println( name + " " + amount + " pуб.\n");
@@ -60,17 +67,5 @@ public class CreditAccount extends Score{
         this.amount = amount;
     }
 
-//    public boolean balance(int amount){
-//        try {
-//            if (amount <= 0) {
-//                this.amount = amount;
-//
-//            }
-//        } catch (Exception E) {
-//            System.out.println("Сумма на счете " + name + " не может быть больше 0\n");
-//            return false;
-//        }
-//        return true;
-//    }
 
 }
