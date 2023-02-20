@@ -6,9 +6,9 @@ public abstract class Score {
 
     public abstract void translation(Score score, int sum);
 
-    public abstract void addMoney(int amount);
+    public abstract void addMoney(int addAmount);
 
-    public abstract void pay (int amount);
+    public abstract void pay (int payAmount);
 
 
 

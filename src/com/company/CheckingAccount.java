@@ -10,6 +10,10 @@ public class CheckingAccount extends Score{
 
     @Override
     public void translation(Score score, int sum) {
+        if(amount  < 0){
+            System.out.println("Сумма на счете " + name + "- не может быть меньше 0\n");
+            return;
+        }
         int remains;
         System.out.println("Перевод с " + name + " на " + score.getName() + " суммы в размере " + sum + "руб.");
 
@@ -39,6 +43,10 @@ public class CheckingAccount extends Score{
 
     @Override
     public void addMoney(int addAmount) {
+        if(amount  < 0){
+            System.out.println("Сумма на счете " + name + "- не может быть меньше 0\n");
+            return;
+        }
         System.out.println("Пополнение " + name + " на сумму " + addAmount + " руб.");
         amount = amount + addAmount;
         System.out.println("На " + name + " " + amount + " руб.\n");
@@ -47,6 +55,10 @@ public class CheckingAccount extends Score{
 
     @Override
     public void pay(int payAmount) {
+        if(amount  < 0){
+            System.out.println("Сумма на счете " + name + "- не может быть меньше 0\n");
+            return;
+        }
         System.out.println("Оплата с " + name);
             if(amount < payAmount){
                 System.out.println("На счете не хватает средств, попробуйте ввести другую сумму для оплаты");
